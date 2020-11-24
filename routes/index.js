@@ -10,21 +10,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/desktop', (req,res)=>{
-  data = {}
-  for(let i=0;i<20;i++){
-    data[i] = 'http://placeimg.com/1024/576';
-  }
-  res.status(statusCode.OK)
-    .send(util.success(statusCode.OK, responseMessage.OK, data));
+  data = []
+  for(let i=0;i<20;i++) data.push({'download_url':'http://placeimg.com/1024/576'})
+  res.status(statusCode.OK).send(data);
 });
 
 router.get('/mobile', (req,res)=>{
-  data = {}
-  for(let i=0;i<20;i++){
-    data[i] = 'http://placeimg.com/360/640';
-  }
-  res.status(statusCode.OK)
-    .send(util.success(statusCode.OK, responseMessage.OK, data));
+  data = []
+  for(let i=0;i<20;i++) data.push({'download_url':'http://placeimg.com/360/640'})
+  res.status(statusCode.OK).send(data);
 });
 
 module.exports = router;
